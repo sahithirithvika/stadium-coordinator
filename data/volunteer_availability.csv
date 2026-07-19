@@ -1,0 +1,26 @@
+volunteer_id,role,zone,status,coverage_pct,timestamp
+VOL-001,Steward,Gate A - Entry Zone,On Duty,95,2024-03-15T12:00:00
+VOL-002,First Aid,Medical Centre - Level 1,On Duty,100,2024-03-15T12:00:00
+VOL-003,Information,Main Entrance - Info Desk,Available,88,2024-03-15T12:00:00
+VOL-004,Parking,Car Park North - Zone 1,On Duty,92,2024-03-15T12:00:00
+VOL-005,Hospitality,VIP Lounge - Level 3,On Duty,100,2024-03-15T12:00:00
+VOL-006,Steward,Gate B - Entry Zone,On Duty,90,2024-03-15T12:30:00
+VOL-007,First Aid,Pitch-Side Station - South,On Duty,100,2024-03-15T12:30:00
+VOL-008,Information,Concourse Level 1 - Kiosk 2,Available,80,2024-03-15T12:30:00
+VOL-009,Parking,Car Park South - Zone 2,Break,75,2024-03-15T12:30:00
+VOL-010,Hospitality,Corporate Boxes - Level 2,On Duty,95,2024-03-15T12:30:00
+VOL-011,Steward,Section C - Lower Tier,On Duty,88,2024-03-15T13:00:00
+VOL-012,First Aid,First Aid Room - Gate C,On Duty,100,2024-03-15T13:00:00
+VOL-013,Information,Gate D - Tourist Assistance,Available,85,2024-03-15T13:00:00
+VOL-014,Parking,Accessible Parking - Zone A,On Duty,100,2024-03-15T13:00:00
+VOL-015,Steward,Upper Tier - Section F,Break,70,2024-03-15T13:30:00
+VOL-016,First Aid,Concourse Level 2 - First Aid,Available,90,2024-03-15T13:30:00
+VOL-017,Hospitality,Media Centre - Press Area,On Duty,95,2024-03-15T13:30:00
+VOL-018,Steward,Gate E - Exit Coordination,On Duty,85,2024-03-15T14:00:00
+VOL-019,Parking,Car Park East - Zone 3,On Duty,78,2024-03-15T14:00:00
+VOL-020,Information,Upper Tier - Help Point,Unavailable,60,2024-03-15T14:00:00
+VOL-021,Steward,Section B - Standing Zone,On Duty,92,2024-03-15T14:30:00
+VOL-022,First Aid,Gate A - Emergency Station,On Duty,100,2024-03-15T14:30:00
+VOL-023,Hospitality,Family Zone - Level 1,Available,83,2024-03-15T14:30:00
+VOL-024,Parking,Drop-Off Zone - Main Entrance,Break,68,2024-03-15T15:00:00
+VOL-025,Steward,Gate F - Away Supporters End,On Duty,87,2024-03-15T15:00:00

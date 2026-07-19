@@ -1,0 +1,22 @@
+[
+  {"timestamp": "2024-03-15T13:00:00", "line": "Line 1 (Blue)", "delay_minutes": 0, "status": "On Time", "next_arrival": "13:07"},
+  {"timestamp": "2024-03-15T13:00:00", "line": "Line 2 (Red)", "delay_minutes": 5, "status": "Delayed", "next_arrival": "13:12"},
+  {"timestamp": "2024-03-15T13:00:00", "line": "Line 3 (Green)", "delay_minutes": 0, "status": "On Time", "next_arrival": "13:04"},
+  {"timestamp": "2024-03-15T13:00:00", "line": "Line 4 (Yellow)", "delay_minutes": 0, "status": "Suspended", "next_arrival": "13:45"},
+  {"timestamp": "2024-03-15T14:00:00", "line": "Line 1 (Blue)", "delay_minutes": 8, "status": "Delayed", "next_arrival": "14:11"},
+  {"timestamp": "2024-03-15T14:00:00", "line": "Line 2 (Red)", "delay_minutes": 0, "status": "On Time", "next_arrival": "14:06"},
+  {"timestamp": "2024-03-15T14:00:00", "line": "Line 3 (Green)", "delay_minutes": 3, "status": "Delayed", "next_arrival": "14:09"},
+  {"timestamp": "2024-03-15T14:00:00", "line": "Line 4 (Yellow)", "delay_minutes": 0, "status": "On Time", "next_arrival": "14:08"},
+  {"timestamp": "2024-03-15T15:00:00", "line": "Line 1 (Blue)", "delay_minutes": 0, "status": "On Time", "next_arrival": "15:05"},
+  {"timestamp": "2024-03-15T15:00:00", "line": "Line 2 (Red)", "delay_minutes": 12, "status": "Delayed", "next_arrival": "15:16"},
+  {"timestamp": "2024-03-15T15:00:00", "line": "Line 3 (Green)", "delay_minutes": 0, "status": "On Time", "next_arrival": "15:03"},
+  {"timestamp": "2024-03-15T15:00:00", "line": "Line 4 (Yellow)", "delay_minutes": 0, "status": "Suspended", "next_arrival": "16:00"},
+  {"timestamp": "2024-03-15T16:00:00", "line": "Line 1 (Blue)", "delay_minutes": 0, "status": "On Time", "next_arrival": "16:07"},
+  {"timestamp": "2024-03-15T16:00:00", "line": "Line 2 (Red)", "delay_minutes": 0, "status": "On Time", "next_arrival": "16:04"},
+  {"timestamp": "2024-03-15T16:00:00", "line": "Line 3 (Green)", "delay_minutes": 7, "status": "Delayed", "next_arrival": "16:12"},
+  {"timestamp": "2024-03-15T16:00:00", "line": "Line 4 (Yellow)", "delay_minutes": 0, "status": "On Time", "next_arrival": "16:09"},
+  {"timestamp": "2024-03-15T17:00:00", "line": "Line 1 (Blue)", "delay_minutes": 15, "status": "Delayed", "next_arrival": "17:18"},
+  {"timestamp": "2024-03-15T17:00:00", "line": "Line 2 (Red)", "delay_minutes": 0, "status": "On Time", "next_arrival": "17:05"},
+  {"timestamp": "2024-03-15T17:00:00", "line": "Line 3 (Green)", "delay_minutes": 0, "status": "On Time", "next_arrival": "17:03"},
+  {"timestamp": "2024-03-15T17:00:00", "line": "Line 4 (Yellow)", "delay_minutes": 0, "status": "On Time", "next_arrival": "17:08"}
+]

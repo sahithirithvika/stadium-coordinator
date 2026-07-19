@@ -1,0 +1,26 @@
+incident_id,timestamp,title,category,severity,description,status,location
+MED-001,2024-03-15T13:05:00,Spectator Ankle Sprain,Minor Injury,Low,Spectator twisted ankle on stairway while descending to lower tier seating,Resolved,Gate A - Stairwell 3
+MED-002,2024-03-15T13:22:00,Heat Exhaustion - Elderly Fan,Heat Exhaustion,Medium,68-year-old male presented with dizziness and excessive sweating in direct sun exposure area,Resolved,Section C - Row 14
+MED-003,2024-03-15T13:47:00,Suspected Cardiac Event,Cardiac,Critical,Male approx 55 experiencing chest pain and shortness of breath — AED deployed and ambulance requested,Escalated,Section B - Row 8
+MED-004,2024-03-15T14:10:00,Minor Laceration from Barrier,Minor Injury,Low,Spectator caught hand on crowd barrier edge; small cut requiring basic wound dressing,Resolved,Gate B - Entry Turnstile Zone
+MED-005,2024-03-15T14:28:00,Child Separated from Guardian,Other,Low,8-year-old child found unaccompanied near food court; reunited with family within 15 minutes,Resolved,Concourse Level 1 - Food Court
+MED-006,2024-03-15T14:45:00,Crowd Push Injury,Crowd Crush,High,Multiple spectators knocked over during surge at Gate C entry — 3 minor injuries reported,Resolved,Gate C - Entry Concourse
+MED-007,2024-03-15T15:00:00,Fainting Spell - Heat,Heat Exhaustion,Medium,Young woman fainted in crowded standing section; responsive after cooling and hydration,Resolved,Standing Zone - South End
+MED-008,2024-03-15T15:18:00,Wrist Fracture - Fall,Minor Injury,Medium,Spectator slipped on wet surface near Gate D restrooms; suspected wrist fracture,Escalated,Gate D - Restroom Corridor
+MED-009,2024-03-15T15:35:00,Allergic Reaction - Food,Other,High,Spectator experiencing hives and throat tightness after consuming vendor food; epinephrine administered,Escalated,Section E - Row 22
+MED-010,2024-03-15T15:52:00,Minor Head Bump,Minor Injury,Low,Child hit head on seat armrest; small bump, no loss of consciousness, parents informed,Resolved,Section A - Row 5
+MED-011,2024-03-15T16:08:00,Asthma Attack,Other,Medium,Adult male asthma attack in upper tier; required inhaler assistance from first aid team,Resolved,Upper Tier - Section F
+MED-012,2024-03-15T16:25:00,Crowd Surge - Crush Situation,Crowd Crush,High,Crowd surge at Gate E caused barrier collapse; 5 individuals treated for compression injuries,Escalated,Gate E - Main Entry
+MED-013,2024-03-15T16:42:00,Suspected Heatstroke,Heat Exhaustion,High,Male presenting with confusion, hot dry skin, and high body temperature — rapid cooling initiated,Escalated,VIP Terrace - West Wing
+MED-014,2024-03-15T17:00:00,Sprained Knee - Seating,Minor Injury,Low,Spectator twisted knee sitting down in steep tier section; first aid applied,Resolved,Upper Tier - Section G Row 3
+MED-015,2024-03-15T17:18:00,Nausea and Vomiting - Alcohol,Other,Low,Intoxicated spectator reporting nausea; escorted to first aid room and monitored,Resolved,Concourse Level 2 - East Side
+MED-016,2024-03-15T17:35:00,Eye Irritation - Debris,Minor Injury,Low,Spectator reports foreign debris in eye following wind gust; eye wash administered,Resolved,Section D - Open Terrace
+MED-017,2024-03-15T17:52:00,Cardiac Chest Pain,Cardiac,Medium,Female 62 reporting tightness in chest; ECG monitoring initiated pending ambulance,Escalated,Section B - Row 20
+MED-018,2024-03-15T18:10:00,Rain-Related Slip and Fall,Minor Injury,Low,Spectator slipped on wet walkway during rainfall; minor bruising to hip and elbow,Resolved,Gate A - Outer Concourse
+MED-019,2024-03-15T18:28:00,Heat Exhaustion - Youth Athlete,Heat Exhaustion,Medium,16-year-old from visiting team support group collapsed with heat symptoms; treated on-site,Resolved,Pitch-Side Area - North End
+MED-020,2024-03-15T18:45:00,Broken Nose - Crowd Contact,Minor Injury,Medium,Fan struck by elbow in crowd; suspected nasal fracture, bleeding controlled,Escalated,Section C - Standing Row
+MED-021,2024-03-15T19:02:00,Panic Attack - Crowd Anxiety,Other,Low,Young adult experiencing severe panic attack in dense crowd area; moved to quiet zone,Resolved,Concourse Level 1 - West Side
+MED-022,2024-03-15T19:20:00,Cut Foot - Broken Glass,Minor Injury,Low,Spectator cut foot on broken glass near refreshment stand; cleaned and dressed,Resolved,Concourse Level 2 - Refreshment Bay
+MED-023,2024-03-15T19:38:00,Diabetic Hypoglycemia,Other,High,Male diabetic presented with confusion and low blood sugar; glucose administered,Resolved,Section F - Row 11
+MED-024,2024-03-15T19:55:00,Crowd Exit Push Injury,Crowd Crush,Medium,Rib bruising reported from crowd pressure during early exit surge at Gate B,Resolved,Gate B - Exit Concourse
+MED-025,2024-03-15T20:00:00,Back Injury - Prolonged Standing,Minor Injury,Low,Elderly spectator experiencing severe back pain after extended standing; wheelchair assistance arranged,Resolved,Section A - Row 1

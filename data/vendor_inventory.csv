@@ -1,0 +1,26 @@
+vendor_id,vendor_name,category,stock_level_pct,items_sold,section,timestamp
+VND-001,Stadium Grill Co.,Food,72,148,Section A - Concourse,2024-03-15T14:00:00
+VND-002,Thirst Quenchers,Beverage,85,210,Gate B - Refreshment Bay,2024-03-15T14:00:00
+VND-003,Fan Gear Central,Merchandise,60,95,Main Entrance Foyer,2024-03-15T14:00:00
+VND-004,Hot Dog Heaven,Food,15,312,Section C - Lower Tier,2024-03-15T14:30:00
+VND-005,Craft Beer Corner,Beverage,55,178,Section B - Bar Area,2024-03-15T14:30:00
+VND-006,Team Colors Shop,Merchandise,78,67,Gate A - Merchandise Stand,2024-03-15T14:30:00
+VND-007,Burger Blitz,Food,42,225,Section D - Food Court,2024-03-15T15:00:00
+VND-008,Smoothie Station,Beverage,90,88,Health Hub - Level 2,2024-03-15T15:00:00
+VND-009,Scarves & Flags Stall,Merchandise,33,120,Gate C - Souvenir Kiosk,2024-03-15T15:00:00
+VND-010,Pizza Express Stand,Food,12,380,Section E - Main Concourse,2024-03-15T15:30:00
+VND-011,Soft Drinks Hub,Beverage,68,295,Section F - Refreshment Zone,2024-03-15T15:30:00
+VND-012,Retro Kits Outlet,Merchandise,50,42,Upper Tier - Merchandise Bay,2024-03-15T15:30:00
+VND-013,Nacho Nation,Food,38,190,Section G - Snack Bar,2024-03-15T16:00:00
+VND-014,Water & Juice Wagon,Beverage,8,420,Gate D - Hydration Point,2024-03-15T16:00:00
+VND-015,Club Badge Booth,Merchandise,44,88,Concourse Level 1 - Kiosk 3,2024-03-15T16:00:00
+VND-016,Wrap & Roll Diner,Food,63,155,VIP Terrace - Catering,2024-03-15T16:30:00
+VND-017,Energy Drinks Bar,Beverage,28,240,Section B - Youth Zone,2024-03-15T16:30:00
+VND-018,Programme Sellers,Merchandise,55,310,Gate E - Entry Kiosk,2024-03-15T16:30:00
+VND-019,Chicken Wings Express,Food,80,112,Section A - Upper Concourse,2024-03-15T17:00:00
+VND-020,Coffee & Tea Point,Beverage,47,198,Concourse Level 2 - Cafe Bay,2024-03-15T17:00:00
+VND-021,Photo & Frame Shop,Merchandise,70,29,VIP Lounge - Level 3,2024-03-15T17:00:00
+VND-022,Loaded Fries Stand,Food,22,265,Section C - Snack Zone,2024-03-15T17:30:00
+VND-023,Sports Drinks Depot,Beverage,17,330,Gate F - Hydration Kiosk,2024-03-15T17:30:00
+VND-024,Novelty Gifts Kiosk,Merchandise,66,51,Main Entrance - Gift Shop,2024-03-15T17:30:00
+VND-025,BBQ Bites Corner,Food,35,175,Section D - Outer Terrace,2024-03-15T18:00:00

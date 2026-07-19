@@ -1,0 +1,26 @@
+alert_id,timestamp,title,severity,description,status,role,category
+SEC-001,2024-03-15T13:02:00,Unauthorised Entry Attempt at Gate C,High,Individual attempting to bypass turnstile at Gate C — stopped by steward; ID check in progress,Resolved,Gate Security Lead,Access
+SEC-002,2024-03-15T13:18:00,Suspicious Package Near North Perimeter,Critical,Unattended bag found near perimeter fence at North Stand — bomb disposal team alerted,Escalated,Security Commander,Threat
+SEC-003,2024-03-15T13:35:00,Crowd Congestion at Gate A,Medium,Unusually dense crowd buildup at Gate A entry point — overflow barriers deployed,Monitoring,Crowd Management Officer,Crowd
+SEC-004,2024-03-15T13:50:00,VIP Escort Protocol Breach,Medium,VIP route deviated from approved plan — security escort re-routed and protocol reviewed,Resolved,VIP Security Coordinator,VIP
+SEC-005,2024-03-15T14:05:00,Perimeter Fence Breach - East Side,High,CCTV detected individual scaling perimeter fence on east side — response team dispatched,Resolved,Perimeter Security Lead,Perimeter
+SEC-006,2024-03-15T14:20:00,Aggressive Fan Behaviour - Section D,Medium,Verbal altercation escalating between rival fan groups in Section D; stewards intervening,Monitoring,Steward Supervisor,Crowd
+SEC-007,2024-03-15T14:38:00,Counterfeit Ticket Detected,Low,Multiple counterfeit tickets identified at Gate B entry; ticket verification team alerted,Resolved,Gate Security Lead,Access
+SEC-008,2024-03-15T14:55:00,Drone Spotted Over Stadium Airspace,Critical,Unauthorised drone detected operating over West Stand — airspace security team scrambled,Active,Security Commander,Threat
+SEC-009,2024-03-15T15:10:00,Banned Individual Spotted at Gate E,High,Known banned individual identified attempting entry at Gate E — detained for authorities,Resolved,Access Control Manager,Access
+SEC-010,2024-03-15T15:25:00,Crowd Surge Warning - South Stand,High,Sudden crowd surge in South Stand standing area — barriers reinforced, stewards repositioned,Monitoring,Crowd Management Officer,Crowd
+SEC-011,2024-03-15T15:40:00,VIP Zone Perimeter Intrusion Attempt,Medium,Spectator bypassed VIP cordon without credential — escorted out by VIP security,Resolved,VIP Security Coordinator,VIP
+SEC-012,2024-03-15T15:58:00,CCTV Camera Fault - Zone 4,Low,Camera failure in Zone 4 upper tier — maintenance team notified, backup coverage active,Monitoring,Security Operations Manager,Perimeter
+SEC-013,2024-03-15T16:12:00,Smoke Detected in Concourse East,High,Smoke alarm triggered in Concourse East refreshment area — fire team on-site investigating,Resolved,Safety Officer,Threat
+SEC-014,2024-03-15T16:28:00,Away Supporters Encroachment Risk,Medium,Away supporter group advancing toward home stand boundary — stewards forming cordon,Monitoring,Steward Supervisor,Crowd
+SEC-015,2024-03-15T16:45:00,Tailgating Entry at Gate D,Low,Two individuals entered on single ticket at Gate D — stopped and secondary checks performed,Resolved,Gate Security Lead,Access
+SEC-016,2024-03-15T17:00:00,Radio Communications Outage - Sector 2,Medium,Security radio network failure in Sector 2 — backup comms channels activated,Active,Security Operations Manager,Perimeter
+SEC-017,2024-03-15T17:15:00,Protest Group Gathering Outside Perimeter,Low,Small protest group assembling outside Gate F perimeter — monitoring from distance,Monitoring,Perimeter Security Lead,Perimeter
+SEC-018,2024-03-15T17:30:00,Fighting Reported in Section B,High,Physical altercation reported in Section B Row 12 — security team and police responding,Resolved,Crowd Management Officer,Crowd
+SEC-019,2024-03-15T17:48:00,Unverified VIP Credential Presented,Low,Unrecognised VIP badge presented at executive entrance — credential verification pending,Resolved,VIP Security Coordinator,VIP
+SEC-020,2024-03-15T18:05:00,Lightning Risk Advisory Issued,Medium,Met Office lightning warning issued for area — shelter protocols and field evacuation reviewed,Active,Safety Officer,Threat
+SEC-021,2024-03-15T18:22:00,Crowd Exit Bottleneck - Gate B,High,Post-match exit congestion at Gate B creating dangerous density — gates widened and redirected,Active,Crowd Management Officer,Crowd
+SEC-022,2024-03-15T18:40:00,Object Thrown onto Playing Field,Low,Projectile thrown from Section C toward pitch — thrower identified and ejected,Resolved,Steward Supervisor,Crowd
+SEC-023,2024-03-15T18:55:00,Perimeter Security Vehicle Breakdown,Low,Perimeter patrol vehicle breakdown near south service entrance — foot patrol deployed as cover,Monitoring,Perimeter Security Lead,Perimeter
+SEC-024,2024-03-15T19:10:00,Critical Threat Intel Received,Critical,Intelligence report indicating credible threat targeting VIP area received — enhanced protocols activated,Active,Security Commander,VIP
+SEC-025,2024-03-15T19:30:00,Medical Emergency Access Blocked,Medium,Emergency vehicle route temporarily obstructed by crowd; coordination needed for medical access,Resolved,Access Control Manager,Access

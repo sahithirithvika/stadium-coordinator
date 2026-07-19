@@ -1,154 +1,132 @@
 """
-pages/home.py
+pages/home.py — Home Page
 
-Home page — entry point for the Stadium Coordinator app.
+Renders the Stadium Coordinator landing page with:
+  - Hero banner with tagline and subtitle
+  - Five navigation cards (one per page)
+  - Live KPI summary row (total attendance, active alerts, parking utilisation, weather)
 """
 
 import streamlit as st
 
-from components.metric_card import metric_card
-from components.navigation_card import navigation_card
+from components import (
+    metric_card,
+    navigation_card,
+)
 from utils.data_loader import load_all_datasets
 
 
 def render() -> None:
     """Render the Home page."""
 
-    # -------------------------------------------------------------------------
+    # -----------------------------------------------------------------------
     # Hero Banner
-    # -------------------------------------------------------------------------
-    st.markdown(
-        '<div class="hero-banner">'
-        "Coordinating Every Decision. Empowering Every Stakeholder."
-        "</div>",
-        unsafe_allow_html=True,
-    )
-
-    if st.button("🚀 Launch Mission Control", use_container_width=False):
-        st.session_state["page"] = "mission_control"
-        st.rerun()
-
-    st.markdown("---")
-
-    # -------------------------------------------------------------------------
-    # Navigation Cards
-    # -------------------------------------------------------------------------
-    st.markdown("### Navigate the Platform")
-    col1, col2, col3, col4 = st.columns(4)
-    with col1:
-        navigation_card(
-            page_name="mission_control",
-            title="Mission Control",
-            description="Real-time operational overview for event coordinators.",
-            icon="🎯",
-        )
-    with col2:
-        navigation_card(
-            page_name="stakeholder_coordinator",
-            title="Stakeholder Coordinator",
-            description="Role-based dashboards for every team on the ground.",
-            icon="👥",
-        )
-    with col3:
-        navigation_card(
-            page_name="scenario_simulator",
-            title="Scenario Simulator",
-            description="Simulate disruptions and plan coordinated responses.",
-            icon="🎭",
-        )
-    with col4:
-        navigation_card(
-            page_name="executive_reports",
-            title="Executive Reports",
-            description="High-level summaries and exportable reports for leadership.",
-            icon="📊",
-        )
-
-    st.markdown("---")
-
-    # -------------------------------------------------------------------------
-    # Architecture Overview
-    # -------------------------------------------------------------------------
-    st.markdown("### Platform Architecture")
+    # -----------------------------------------------------------------------
     st.markdown(
         """
-<div class="card">
-  <div class="card-title">Stakeholder Roles → AI Coordination Layer</div>
-  <div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin:1rem 0;">
-    <span class="badge badge-neutral">🏟️ Organizer</span>
-    <span class="badge badge-neutral">🔒 Security</span>
-    <span class="badge badge-neutral">🏥 Medical</span>
-    <span class="badge badge-neutral">🙋 Volunteer</span>
-    <span class="badge badge-neutral">🛒 Vendor</span>
-    <span class="badge badge-neutral">🚌 Transport</span>
-    <span class="badge badge-neutral">⭐ Fan</span>
-  </div>
-  <div class="card-body" style="margin-bottom:0.5rem;">
-    All 7 stakeholder roles feed live operational data into the
-    <strong>AI Coordination Layer</strong>, which surfaces prioritised
-    recommendations across Mission Control, Scenario Simulator, and
-    Executive Reports — keeping every team aligned in real time.
+<div class="hero-banner">
+  <div class="hero-tagline">🏟️ Stadium Coordinator</div>
+  <div class="hero-subtitle">
+    One Situation. Multiple Perspectives. One Coordinated Response.<br>
+    Enterprise-grade operational intelligence for live stadium events.
   </div>
 </div>
 """,
         unsafe_allow_html=True,
     )
 
-    st.markdown("---")
-
-    # -------------------------------------------------------------------------
-    # Recent Event Snapshot
-    # -------------------------------------------------------------------------
-    st.markdown("### Recent Event Snapshot")
-
+    # -----------------------------------------------------------------------
+    # Quick-access KPI row
+    # -----------------------------------------------------------------------
     datasets = load_all_datasets()
 
+    # Total current attendance from crowd_levels (sum of current_count at latest timestamp)
+    total_attendance = "—"
     crowd_result = datasets.get("crowd_levels")
-    security_result = datasets.get("security_alerts")
+    if crowd_result and crowd_result.success and crowd_result.data is not None:
+        df = crowd_result.data
+        if "timestamp" in df.columns and "current_count" in df.columns:
+            latest_ts = df["timestamp"].max()
+            latest = df[df["timestamp"] == latest_ts]
+            total_attendance = f"{int(latest['current_count'].sum()):,}"
+
+    # Active security alerts
+    active_alerts = "—"
+    alerts_result = datasets.get("security_alerts")
+    if alerts_result and alerts_result.success and alerts_result.data is not None:
+        df = alerts_result.data
+        if "status" in df.columns:
+            active_alerts = str(len(df[df["status"].isin(["Active", "Escalated", "Monitoring"])]))
+
+    # Average parking utilisation
+    avg_parking = "—"
+    parking_result = datasets.get("parking")
+    if parking_result and parking_result.success and parking_result.data is not None:
+        df = parking_result.data
+        if "utilization_pct" in df.columns:
+            avg_parking = f"{df['utilization_pct'].mean():.0f}%"
+
+    # Latest weather condition
+    weather_val = "—"
     weather_result = datasets.get("weather")
+    if weather_result and weather_result.success and weather_result.data is not None:
+        df = weather_result.data
+        if "timestamp" in df.columns and "condition" in df.columns and "temperature_c" in df.columns:
+            latest_ts = df["timestamp"].max()
+            row = df[df["timestamp"] == latest_ts].iloc[0]
+            weather_val = f"{row['condition']}, {row['temperature_c']}°C"
 
-    col_a, col_b, col_c = st.columns(3)
+    kpi_cols = st.columns(4)
+    with kpi_cols[0]:
+        metric_card("Total Attendance", total_attendance, unit="")
+    with kpi_cols[1]:
+        metric_card("Active Alerts", active_alerts, unit="")
+    with kpi_cols[2]:
+        metric_card("Avg Parking Util", avg_parking, unit="")
+    with kpi_cols[3]:
+        metric_card("Current Weather", weather_val, unit="")
 
-    # -- Total Attendance --
-    with col_a:
-        if crowd_result and crowd_result.success:
-            try:
-                df_crowd = crowd_result.data
-                latest_ts = df_crowd["timestamp"].max()
-                total_attendance = int(
-                    df_crowd[df_crowd["timestamp"] == latest_ts]["current_count"].sum()
-                )
-                metric_card("Total Attendance", f"{total_attendance:,}", unit="")
-            except Exception:
-                st.warning("Could not compute attendance from crowd data.")
-        else:
-            msg = crowd_result.error_message if crowd_result else "Crowd data unavailable."
-            st.warning(f"Attendance data unavailable: {msg}")
+    st.markdown("---")
 
-    # -- Active Alerts --
-    with col_b:
-        if security_result and security_result.success:
-            try:
-                df_sec = security_result.data
-                active_count = int((df_sec["status"] == "Active").sum())
-                metric_card("Active Alerts", active_count)
-            except Exception:
-                st.warning("Could not compute active alert count.")
-        else:
-            msg = security_result.error_message if security_result else "Security data unavailable."
-            st.warning(f"Alert data unavailable: {msg}")
+    # -----------------------------------------------------------------------
+    # Navigation Cards — 5 pages in a 2-3 layout
+    # -----------------------------------------------------------------------
+    st.markdown(
+        '<div class="card-title" style="margin-bottom:1rem;">Platform Modules</div>',
+        unsafe_allow_html=True,
+    )
 
-    # -- Weather --
-    with col_c:
-        if weather_result and weather_result.success:
-            try:
-                df_weather = weather_result.data
-                latest_weather = df_weather.iloc[-1]
-                condition = latest_weather.get("condition", "N/A")
-                temp = latest_weather.get("temperature_c", "N/A")
-                metric_card("Weather", f"{condition}", unit=f" · {temp}°C")
-            except Exception:
-                st.warning("Could not read weather data.")
-        else:
-            msg = weather_result.error_message if weather_result else "Weather data unavailable."
-            st.warning(f"Weather data unavailable: {msg}")
+    row1 = st.columns(2)
+    row2 = st.columns(3)
+
+    nav_items = [
+        (
+            "mission_control",
+            "Mission Control",
+            "Real-time crowd density, gate occupancy, transport, parking and weather overview.",
+            "🎛️",
+        ),
+        (
+            "stakeholder_coordinator",
+            "Stakeholder Coordinator",
+            "Role-filtered views for Security, Medical, Operations and Logistics teams.",
+            "👥",
+        ),
+        (
+            "scenario_simulator",
+            "Scenario Simulator",
+            "Run what-if scenarios — crowd surge, transport failure, weather emergencies.",
+            "🔬",
+        ),
+        (
+            "executive_reports",
+            "Executive Reports",
+            "Auto-generated post-event summaries with KPI scorecards and incident timelines.",
+            "📊",
+        ),
+    ]
+
+    for i, (page_name, title, desc, icon) in enumerate(nav_items):
+        col = row1[i] if i < 2 else row2[i - 2]
+        with col:
+            navigation_card(page_name=page_name, title=title, description=desc, icon=icon)

@@ -1,0 +1,227 @@
+[
+  {
+    "timestamp": "2024-03-15T12:00:00",
+    "condition": "Sunny",
+    "temperature_c": 22.5,
+    "humidity_pct": 45,
+    "wind_kph": 12,
+    "visibility_km": 15.0,
+    "forecast_2h": "Sunny skies expected to continue through early afternoon"
+  },
+  {
+    "timestamp": "2024-03-15T12:30:00",
+    "condition": "Sunny",
+    "temperature_c": 23.1,
+    "humidity_pct": 44,
+    "wind_kph": 10,
+    "visibility_km": 15.0,
+    "forecast_2h": "Clear conditions with mild breeze, temperatures rising"
+  },
+  {
+    "timestamp": "2024-03-15T13:00:00",
+    "condition": "Sunny",
+    "temperature_c": 24.0,
+    "humidity_pct": 43,
+    "wind_kph": 11,
+    "visibility_km": 14.8,
+    "forecast_2h": "Sunny and warm, slight cloud build-up possible by 15:00"
+  },
+  {
+    "timestamp": "2024-03-15T13:30:00",
+    "condition": "Sunny",
+    "temperature_c": 24.8,
+    "humidity_pct": 46,
+    "wind_kph": 13,
+    "visibility_km": 14.5,
+    "forecast_2h": "Sunny with increasing humidity, clouds forming to the west"
+  },
+  {
+    "timestamp": "2024-03-15T14:00:00",
+    "condition": "Cloudy",
+    "temperature_c": 24.3,
+    "humidity_pct": 52,
+    "wind_kph": 16,
+    "visibility_km": 13.0,
+    "forecast_2h": "Cloud cover increasing, chance of light showers by 16:00"
+  },
+  {
+    "timestamp": "2024-03-15T14:30:00",
+    "condition": "Cloudy",
+    "temperature_c": 23.7,
+    "humidity_pct": 57,
+    "wind_kph": 18,
+    "visibility_km": 12.5,
+    "forecast_2h": "Overcast skies developing, rain possible within 90 minutes"
+  },
+  {
+    "timestamp": "2024-03-15T15:00:00",
+    "condition": "Cloudy",
+    "temperature_c": 23.0,
+    "humidity_pct": 63,
+    "wind_kph": 20,
+    "visibility_km": 11.0,
+    "forecast_2h": "Heavy cloud cover, rain likely by 17:00 — advise shelter readiness"
+  },
+  {
+    "timestamp": "2024-03-15T15:30:00",
+    "condition": "Cloudy",
+    "temperature_c": 22.2,
+    "humidity_pct": 69,
+    "wind_kph": 22,
+    "visibility_km": 10.0,
+    "forecast_2h": "Overcast and breezy, rain imminent within the hour"
+  },
+  {
+    "timestamp": "2024-03-15T16:00:00",
+    "condition": "Cloudy",
+    "temperature_c": 21.5,
+    "humidity_pct": 74,
+    "wind_kph": 25,
+    "visibility_km": 9.0,
+    "forecast_2h": "Conditions deteriorating, light rain expected to start soon"
+  },
+  {
+    "timestamp": "2024-03-15T16:30:00",
+    "condition": "Cloudy",
+    "temperature_c": 20.8,
+    "humidity_pct": 79,
+    "wind_kph": 27,
+    "visibility_km": 8.5,
+    "forecast_2h": "Rain starting within 30 minutes, winds picking up"
+  },
+  {
+    "timestamp": "2024-03-15T17:00:00",
+    "condition": "Rain",
+    "temperature_c": 19.5,
+    "humidity_pct": 85,
+    "wind_kph": 30,
+    "visibility_km": 6.5,
+    "forecast_2h": "Light to moderate rain, conditions may worsen by 18:00"
+  },
+  {
+    "timestamp": "2024-03-15T17:30:00",
+    "condition": "Rain",
+    "temperature_c": 18.9,
+    "humidity_pct": 88,
+    "wind_kph": 33,
+    "visibility_km": 5.5,
+    "forecast_2h": "Steady rain continuing, heavy rain possible by 18:30"
+  },
+  {
+    "timestamp": "2024-03-15T18:00:00",
+    "condition": "Heavy Rain",
+    "temperature_c": 17.8,
+    "humidity_pct": 93,
+    "wind_kph": 40,
+    "visibility_km": 3.5,
+    "forecast_2h": "Heavy rain and strong gusts — activate flood protocols, gate shelters open"
+  },
+  {
+    "timestamp": "2024-03-15T18:30:00",
+    "condition": "Rain",
+    "temperature_c": 17.2,
+    "humidity_pct": 91,
+    "wind_kph": 35,
+    "visibility_km": 4.5,
+    "forecast_2h": "Rain easing slightly, heavy showers still possible — maintain shelters"
+  },
+  {
+    "timestamp": "2024-03-15T19:00:00",
+    "condition": "Rain",
+    "temperature_c": 17.8,
+    "humidity_pct": 88,
+    "wind_kph": 28,
+    "visibility_km": 5.8,
+    "forecast_2h": "Moderate rain, slow improvement expected over next two hours"
+  },
+  {
+    "timestamp": "2024-03-15T19:30:00",
+    "condition": "Rain",
+    "temperature_c": 18.3,
+    "humidity_pct": 84,
+    "wind_kph": 24,
+    "visibility_km": 7.0,
+    "forecast_2h": "Light rain with gradual clearing, conditions improving by 21:00"
+  },
+  {
+    "timestamp": "2024-03-15T20:00:00",
+    "condition": "Cloudy",
+    "temperature_c": 18.8,
+    "humidity_pct": 79,
+    "wind_kph": 20,
+    "visibility_km": 8.5,
+    "forecast_2h": "Rain has stopped, remaining overcast with possible brief showers"
+  },
+  {
+    "timestamp": "2024-03-15T20:30:00",
+    "condition": "Cloudy",
+    "temperature_c": 19.2,
+    "humidity_pct": 74,
+    "wind_kph": 17,
+    "visibility_km": 10.0,
+    "forecast_2h": "Clouds thinning, clear skies returning by 22:00"
+  },
+  {
+    "timestamp": "2024-03-15T21:00:00",
+    "condition": "Cloudy",
+    "temperature_c": 19.5,
+    "humidity_pct": 68,
+    "wind_kph": 14,
+    "visibility_km": 11.5,
+    "forecast_2h": "Becoming partly cloudy, pleasant conditions for event exit"
+  },
+  {
+    "timestamp": "2024-03-15T21:30:00",
+    "condition": "Cloudy",
+    "temperature_c": 19.0,
+    "humidity_pct": 63,
+    "wind_kph": 12,
+    "visibility_km": 12.5,
+    "forecast_2h": "Mostly cloudy, no further precipitation expected tonight"
+  },
+  {
+    "timestamp": "2024-03-15T22:00:00",
+    "condition": "Sunny",
+    "temperature_c": 18.5,
+    "humidity_pct": 58,
+    "wind_kph": 10,
+    "visibility_km": 14.0,
+    "forecast_2h": "Clear and dry, excellent visibility for post-event traffic management"
+  },
+  {
+    "timestamp": "2024-03-15T22:30:00",
+    "condition": "Sunny",
+    "temperature_c": 17.9,
+    "humidity_pct": 55,
+    "wind_kph": 9,
+    "visibility_km": 14.5,
+    "forecast_2h": "Clear skies, light winds, good conditions throughout the night"
+  },
+  {
+    "timestamp": "2024-03-15T23:00:00",
+    "condition": "Sunny",
+    "temperature_c": 17.2,
+    "humidity_pct": 53,
+    "wind_kph": 8,
+    "visibility_km": 15.0,
+    "forecast_2h": "Clear and cool, no weather concerns for remaining event operations"
+  },
+  {
+    "timestamp": "2024-03-15T23:30:00",
+    "condition": "Sunny",
+    "temperature_c": 16.8,
+    "humidity_pct": 51,
+    "wind_kph": 7,
+    "visibility_km": 15.0,
+    "forecast_2h": "Clear overnight conditions, temperature dropping gradually"
+  },
+  {
+    "timestamp": "2024-03-15T23:59:00",
+    "condition": "Sunny",
+    "temperature_c": 16.3,
+    "humidity_pct": 50,
+    "wind_kph": 6,
+    "visibility_km": 15.0,
+    "forecast_2h": "Clear and calm, no significant weather events expected"
+  }
+]
