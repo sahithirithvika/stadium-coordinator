@@ -15,13 +15,13 @@ To integrate Google Gemini 2.5 Flash in a future release:
 from __future__ import annotations
 
 _PLACEHOLDER_RECOMMENDATIONS = [
-    "Deploy additional security personnel to Gate C — queue occupancy has reached 87%.",
-    "Coordinate with metro operations to increase train frequency on Line 2; current delay is 12 minutes.",
-    "Alert medical team to maintain elevated readiness — crowd density in the North Stand exceeds safe thresholds.",
-    "Notify vendor managers in Sections D and E to restock beverages; stock levels are below 20%.",
-    "Recommend opening overflow parking at Zone F to reduce congestion on the main approach road.",
-    "Issue a public address announcement to distribute spectators evenly across all open gates.",
-    "Confirm volunteer deployment at first-aid stations in Blocks 101–105 before match kick-off.",
+    "🚨 IMMEDIATE: Deploy 4 additional security stewards to Gate C — queue occupancy at 94%, exceeding the 85% safe threshold. Estimated crowd clearance time: 8 minutes.",
+    "🚌 TRANSPORT: Coordinate with metro operations to increase Line 2 frequency from 8-min to 4-min intervals. Current delay: 12 minutes affecting ~2,400 fans en route.",
+    "🏥 MEDICAL: Pre-position a second paramedic team at the North Stand first-aid station. Crowd density in that section has reached 88% — heat exhaustion risk elevated.",
+    "🛒 VENDOR: Alert vendor managers at Sections D & E to initiate emergency restocking. Beverage stock below 15% — estimated depletion in 22 minutes at current sales rate.",
+    "🅿️ PARKING: Open overflow parking Zone F immediately. Main approach road congestion will worsen in 18 minutes as the wave of late arrivals reaches the perimeter.",
+    "📢 COMMUNICATION: Issue PA announcement to distribute arriving fans across Gates A, B, and H. Gate C is at capacity — redirecting 800+ queued fans will reduce crush risk.",
+    "🙋 VOLUNTEERS: Redeploy 6 volunteers from the low-density West Stand concourse to Gate C queue management and North Stand crowd guidance positions.",
 ]
 
 

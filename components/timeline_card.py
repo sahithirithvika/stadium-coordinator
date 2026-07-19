@@ -5,6 +5,7 @@ Renders a single timeline entry using the .timeline-entry and
 .timeline-connector CSS classes defined in styles/main.css.
 """
 
+import html
 import streamlit as st
 
 
@@ -17,7 +18,11 @@ def timeline_card(event_title: str, description: str, timestamp: str) -> None:
     description: Supporting detail text below the title.
     timestamp:   Time string displayed at the top-right of the entry.
     """
-    html = f"""
+    event_title = html.escape(str(event_title))
+    description = html.escape(str(description))
+    timestamp = html.escape(str(timestamp))
+
+    html_str = f"""
 <div class="timeline-entry">
   <div class="timeline-connector"></div>
   <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:0.25rem;">
@@ -27,4 +32,4 @@ def timeline_card(event_title: str, description: str, timestamp: str) -> None:
   <div class="card-body">{description}</div>
 </div>
 """
-    st.markdown(html, unsafe_allow_html=True)
+    st.markdown(html_str, unsafe_allow_html=True)

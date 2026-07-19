@@ -6,6 +6,7 @@ reflects severity level. Badge, title, description, and timestamp
 are all displayed.
 """
 
+import html
 import streamlit as st
 
 # Severity → (CSS variable for border color, badge CSS class)
@@ -40,7 +41,11 @@ def alert_card(
         _DEFAULT_SEVERITY,
     )
 
-    html = f"""
+    title = html.escape(str(title))
+    description = html.escape(str(description))
+    timestamp = html.escape(str(timestamp))
+
+    html_str = f"""
 <div class="card" style="border-left: 4px solid {border_color}; padding-left: 1rem;">
   <div style="display:flex; align-items:center; gap:0.5rem; margin-bottom:0.5rem;">
     <span class="badge {badge_class}">{severity}</span>
@@ -50,4 +55,4 @@ def alert_card(
   <div style="font-size:var(--font-size-xs); color:#475569;">{timestamp}</div>
 </div>
 """
-    st.markdown(html, unsafe_allow_html=True)
+    st.markdown(html_str, unsafe_allow_html=True)

@@ -12,7 +12,15 @@ No page-rendering logic or component definitions reside here.
 """
 
 import pathlib
+import logging
+import os
 import streamlit as st
+
+logging.basicConfig(
+    level=getattr(logging, os.environ.get("LOG_LEVEL", "INFO"), logging.INFO),
+    format="%(asctime)s [%(levelname)s] %(name)s: %(message)s",
+)
+logger = logging.getLogger("stadium_coordinator")
 
 # ---------------------------------------------------------------------------
 # CSS Loader — inject all .css files from styles/ via a single st.markdown call
@@ -146,6 +154,7 @@ st.set_page_config(
     initial_sidebar_state="expanded",
 )
 
+logger.info("Stadium Coordinator starting up")
 _load_css()
 _init_session_state()
 _render_sidebar()

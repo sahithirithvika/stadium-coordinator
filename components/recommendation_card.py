@@ -6,6 +6,7 @@ badge (.ai-placeholder-label) and a confidence percentage. The body text
 is always caller-supplied — nothing is hardcoded here.
 """
 
+import html
 import streamlit as st
 
 
@@ -18,7 +19,10 @@ def recommendation_card(title: str, body: str, confidence: float) -> None:
     body:       Recommendation detail text. Must be provided by the caller.
     confidence: Float 0–100 representing model confidence percentage.
     """
-    html = f"""
+    title = html.escape(str(title))
+    body = html.escape(str(body))
+
+    html_str = f"""
 <div class="card">
   <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:0.75rem;">
     <span class="card-title" style="margin-bottom:0;">{title}</span>
@@ -30,4 +34,4 @@ def recommendation_card(title: str, body: str, confidence: float) -> None:
   </div>
 </div>
 """
-    st.markdown(html, unsafe_allow_html=True)
+    st.markdown(html_str, unsafe_allow_html=True)

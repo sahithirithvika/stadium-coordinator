@@ -1,234 +1,242 @@
-# Stadium Coordinator 🏟️
+<div align="center">
 
-![Python](https://img.shields.io/badge/Python-3.11%2B-3776AB?logo=python&logoColor=white)
-![Streamlit](https://img.shields.io/badge/Streamlit-1.35%2B-FF4B4B?logo=streamlit&logoColor=white)
-![Plotly](https://img.shields.io/badge/Plotly-5.22%2B-3F4F75?logo=plotly&logoColor=white)
-![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)
-![CI](https://github.com/sahithirithvika/stadium-coordinator/actions/workflows/ci.yml/badge.svg)
+# 🏟️ Stadium Coordinator
 
-> **Enterprise-grade operational coordination platform for live stadium events — real-time situational awareness, role-based dashboards, and AI-powered recommendations in one unified interface.**
+**Enterprise-grade operational coordination platform for live stadium events**
+
+*One Situation. Multiple Perspectives. One Coordinated Response.*
+
+[![Python](https://img.shields.io/badge/Python-3.11+-3776AB?style=flat&logo=python&logoColor=white)](https://python.org)
+[![Streamlit](https://img.shields.io/badge/Streamlit-1.35+-FF4B4B?style=flat&logo=streamlit&logoColor=white)](https://streamlit.io)
+[![Plotly](https://img.shields.io/badge/Plotly-5.22+-3F4F75?style=flat&logo=plotly&logoColor=white)](https://plotly.com)
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue?style=flat)](LICENSE)
+[![CI](https://github.com/sahithirithvika/stadium-coordinator/actions/workflows/ci.yml/badge.svg)](https://github.com/sahithirithvika/stadium-coordinator/actions)
+
+[🚀 Live Demo](https://stadium-coordinator-eziakajsjq4prgkzhmtwy8.streamlit.app/) · [📋 Report Bug](https://github.com/sahithirithvika/stadium-coordinator/issues) · [✨ Request Feature](https://github.com/sahithirithvika/stadium-coordinator/issues)
+
+</div>
 
 ---
 
-## Problem Statement
+## 🎯 Problem Statement
 
-Running a live stadium event involves dozens of independent teams — security, transport, medical, vendors, volunteers — operating in silos with no shared situational picture. Incidents escalate because the right person doesn't have the right data at the right time.
+Stadium events involve **7+ stakeholder groups** (Organizers, Security, Medical, Volunteers, Vendors, Transport, Fans) operating in silos. When an incident occurs — a crowd surge, medical emergency, or transport failure — each team reacts independently. There is **no single coordinated response**.
 
-Stadium Coordinator solves this by aggregating all operational data streams into a single, role-aware command interface, surfacing AI-generated recommendations before problems become crises.
+Current monitoring systems show dashboards. They don't coordinate decisions.
 
 ---
 
-## Solution Architecture
+## 💡 Solution
+
+Stadium Coordinator provides a **prompt-first coordination platform** that:
+
+1. **Aggregates** all operational data from 10 real-time data streams into one context
+2. **Surfaces** role-filtered dashboards for every stakeholder group
+3. **Simulates** adverse scenarios with immediate operational impact analysis
+4. **Generates** a single AI-powered coordinated action plan via one Gemini API call (future release)
+
+The architecture is designed so adding AI requires changing **exactly one function**.
+
+---
+
+## ✨ Features
+
+| Module | Description |
+|--------|-------------|
+| 🎛️ **Mission Control** | 6-tab live dashboard: Crowd, Gates, Transport, Parking, Weather, Security |
+| 👥 **Stakeholder Coordinator** | Role-filtered views for Security, Medical, Operations, Logistics |
+| 🔬 **Scenario Simulator** | Interactive what-if simulations: Crowd Surge, Transport Failure, Weather Emergency |
+| 📊 **Executive Reports** | Risk assessment, incident summary, stakeholder KPIs, AI recommendations |
+| 🤖 **AI Integration Point** | Single `get_ai_recommendations()` function — drop-in Gemini replacement |
+
+---
+
+## 🤖 AI Features
+
+- **Prompt-First Architecture**: All 10 data streams aggregated into one JSON context via `build_stadium_context()`
+- **Single Integration Point**: `get_ai_recommendations(context)` in `utils/ai_integration.py` — replace placeholder with Gemini in one edit
+- **Confidence Scores**: Every recommendation displays a confidence percentage
+- **Role-Aware Recommendations**: AI output surfaced per stakeholder role
+- **Graceful Fallback**: Static recommendations ensure the app works without API keys
+
+---
+
+## 🏗️ Architecture
 
 ```
-┌─────────────────────────────────────────────────┐
-│                  Streamlit Frontend              │
-│  Home │ Mission Control │ Stakeholder │ Scenario │ Reports │
-└────────────────────────┬────────────────────────┘
-                         │
-         ┌───────────────▼───────────────┐
-         │         Page Layer            │
-         │  pages/*.py  (render logic)   │
-         └───────────────┬───────────────┘
-                         │
-    ┌────────────────────▼────────────────────┐
-    │              Utils Layer                │
-    │  data_loader │ context_builder │ AI     │
-    └────────────────────┬────────────────────┘
-                         │
-    ┌────────────────────▼────────────────────┐
-    │              Data Layer                 │
-    │  10 × CSV / JSON datasets in data/      │
-    └─────────────────────────────────────────┘
+User Request
+     │
+     ▼
+ app.py (Entry Point)
+     │
+     ├─ Sidebar Navigation (5 pages)
+     │
+     ├─ utils/data_loader.py ──── 10 CSV/JSON datasets
+     │        │
+     │        ▼
+     ├─ utils/context_builder.py ── build_stadium_context()
+     │        │
+     │        ▼
+     └─ utils/ai_integration.py ── get_ai_recommendations() ← AI INTEGRATION POINT
+              │
+              ▼
+         components/ (9 reusable UI components)
+              │
+              ▼
+         pages/ (5 page modules)
 ```
 
 ---
 
-## Features
-
-| Page | Description |
-|------|-------------|
-| **Home** | Role selector, live metric cards, AI recommendation panel |
-| **Mission Control** | Real-time crowd density, gate occupancy, transport status, weather overlay |
-| **Stakeholder Coordinator** | Role-filtered views for Security, Medical, Transport, Vendors, Volunteers |
-| **Scenario Simulator** | Tabletop stress-testing — simulate crowd surges, gate failures, weather events |
-| **Executive Reports** | KPI summaries, incident timelines, exportable event reports |
-
----
-
-## AI Features
-
-- **AI Recommendation Engine** — `utils/ai_integration.py` is a single integration point. Static placeholder recommendations ship today; swap in Gemini 2.5 Flash by adding `GEMINI_API_KEY` to your environment — the function signature stays the same.
-- **Context Builder** — `utils/context_builder.py` serialises all 10 live datasets into a JSON-safe prompt context dict ready to be sent to any LLM.
-- **Scenario AI Prompts** — the Scenario Simulator page prepares structured prompts for AI-driven what-if analysis.
-
----
-
-## Tech Stack
-
-| Layer | Technology | Version |
-|-------|-----------|---------|
-| Frontend / App | Streamlit | 1.35+ |
-| Visualisation | Plotly | 5.22+ |
-| Data Processing | Pandas | 2.2+ |
-| Language | Python | 3.11+ |
-| CI/CD | GitHub Actions | — |
-| Testing | pytest + pytest-cov | — |
-| Security Scan | Bandit | — |
-| Linting | flake8 | — |
-
----
-
-## Folder Structure
+## 🗂️ Folder Structure
 
 ```
 stadium-coordinator/
-├── app.py                     # Entry point — routing & session state
+├── app.py                        # Entry point: routing + CSS loader
+├── requirements.txt              # Pinned dependencies
+├── pyproject.toml               # Project metadata + test config
+├── .env.example                 # Environment variable template
 ├── pages/
-│   ├── home.py
-│   ├── mission_control.py
+│   ├── home.py                  # Landing page
+│   ├── mission_control.py       # Live dashboard
 │   ├── stakeholder_coordinator.py
 │   ├── scenario_simulator.py
 │   └── executive_reports.py
-├── components/                # Reusable UI widgets
-│   ├── metric_card.py
-│   ├── alert_card.py
-│   ├── status_badge.py
-│   ├── timeline_card.py
-│   ├── recommendation_card.py
-│   ├── role_selector.py
-│   ├── navigation_card.py
-│   ├── report_card.py
-│   └── chart_container.py
+├── components/
+│   ├── metric_card.py           # KPI card
+│   ├── status_badge.py          # Colored status pill
+│   ├── alert_card.py            # Severity-coded alert
+│   ├── timeline_card.py         # Timeline entry
+│   ├── recommendation_card.py   # AI recommendation panel
+│   ├── role_selector.py         # Role switcher
+│   ├── navigation_card.py       # Page navigation card
+│   ├── report_card.py           # Report section card
+│   └── chart_container.py       # Plotly chart wrapper
 ├── utils/
-│   ├── data_loader.py         # Centralised dataset loading
-│   ├── context_builder.py     # JSON-safe AI context serialiser
-│   ├── ai_integration.py      # AI integration point (Gemini-ready)
-│   └── chart_theme.py         # Plotly dark theme constants
-├── data/                      # 10 × CSV / JSON operational datasets
+│   ├── data_loader.py           # Dataset loading with graceful errors
+│   ├── context_builder.py       # Aggregates all data → JSON context
+│   ├── ai_integration.py        # AI INTEGRATION POINT
+│   └── chart_theme.py           # Plotly theme constants
+├── data/                        # 10 sample datasets (CSV + JSON)
 ├── styles/
-│   └── main.css
-├── tests/                     # pytest unit & smoke tests
-├── .github/workflows/ci.yml   # CI — test + lint + security scan
-├── pyproject.toml
-├── requirements.txt
-└── .env.example
+│   └── main.css                 # Glassmorphism dark theme
+├── tests/                       # pytest test suite (59 tests)
+├── .github/workflows/ci.yml     # GitHub Actions CI
+└── docs/                        # Architecture diagrams
 ```
 
 ---
 
-## Installation
+## 🚀 Quick Start
 
-### Local (recommended)
+### Local Installation
 
 ```bash
-# 1. Clone
+# 1. Clone the repository
 git clone https://github.com/sahithirithvika/stadium-coordinator.git
 cd stadium-coordinator
 
-# 2. Create virtual environment
+# 2. Create a virtual environment
 python -m venv .venv
-source .venv/bin/activate        # Windows: .venv\Scripts\activate
+source .venv/bin/activate      # Linux/macOS
+.venv\Scripts\activate         # Windows
 
 # 3. Install dependencies
 pip install -r requirements.txt
 
-# 4. Copy environment file
+# 4. Set up environment variables
 cp .env.example .env
-# Edit .env and add your GEMINI_API_KEY when ready
+# Edit .env with your values (optional for base app)
 
-# 5. Run
+# 5. Run the application
 streamlit run app.py
 ```
 
-### Docker
-
-```dockerfile
-# Build
-docker build -t stadium-coordinator .
-
-# Run
-docker run -p 8501:8501 --env-file .env stadium-coordinator
-```
-
-> A `Dockerfile` is on the future scope list — contributions welcome!
+The app will open at `http://localhost:8501`
 
 ---
 
-## Environment Variables
+## 🌐 Live Demo
 
-Copy `.env.example` to `.env` and fill in values. See `.env.example` for the full list.
-
-| Variable | Required | Description |
-|----------|----------|-------------|
-| `GEMINI_API_KEY` | Future | Google Gemini API key for live AI recommendations |
-| `STREAMLIT_ENV` | No | `development` or `production` |
-| `LOG_LEVEL` | No | Logging verbosity (`DEBUG`, `INFO`, `WARNING`, `ERROR`) |
+**[→ Open Live App](https://stadium-coordinator-eziakajsjq4prgkzhmtwy8.streamlit.app/)**
 
 ---
 
-## Live Demo
+## 🧰 Tech Stack
 
-🌐 **[https://stadium-coordinator-eziakajsjq4prgkzhmtwy8.streamlit.app/](https://stadium-coordinator-eziakajsjq4prgkzhmtwy8.streamlit.app/)**
+| Technology | Version | Purpose |
+|-----------|---------|---------|
+| Python | 3.11+ | Core language |
+| Streamlit | 1.35+ | Web framework |
+| Plotly | 5.22+ | Interactive charts |
+| Pandas | 2.2+ | Data manipulation |
+| Hypothesis | 6.100+ | Property-based testing |
+| pytest | Latest | Test runner |
+| GitHub Actions | — | CI/CD |
 
 ---
 
-## Screenshots
+## 🔒 Environment Variables
 
-> _Screenshots coming soon — contributions welcome!_
+See `.env.example` for all available variables.
 
-Place screenshots in `assets/` and reference them here:
-
-```markdown
-![Home Page](assets/screenshot_home.png)
-![Mission Control](assets/screenshot_mission_control.png)
+```bash
+GEMINI_API_KEY=your_key_here    # Future AI integration
+STREAMLIT_ENV=development        # Environment mode
+LOG_LEVEL=INFO                   # Logging verbosity
 ```
 
 ---
 
-## Future Scope
+## 🧪 Running Tests
 
-- **Gemini 2.5 Flash AI Integration** — Replace placeholder recommendations with live Gemini API calls. The hook in `utils/ai_integration.py` is already in place; add your key and swap the return statement.
-- **Real-time Data Ingestion** — WebSocket feeds from turnstile sensors, parking IoT, and transport APIs.
-- **Mobile-responsive layout** — Progressive enhancement for field personnel on tablets.
-- **Multi-event support** — Tenant-aware data partitioning for venue operators running concurrent events.
-- **Docker Compose deployment** — Containerised stack with a reverse proxy and secrets management.
-- **Alert Push Notifications** — Email / SMS / Slack integration for critical threshold breaches.
+```bash
+# Run all tests
+pytest tests/ -v
 
----
+# Run with coverage
+pytest tests/ -v --cov=utils --cov=components --cov-report=term-missing
 
-## Contributing
+# Run a specific test file
+pytest tests/test_data_loader.py -v
+```
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for branch naming, commit conventions, and the PR checklist.
-
----
-
-## Security
-
-See [SECURITY.md](SECURITY.md) for our vulnerability reporting policy and supported versions.
+Current test suite: **59 tests** across 6 modules.
 
 ---
 
-## Code of Conduct
+## 🔮 Future Scope
 
-This project follows the [Contributor Covenant 2.1](CODE_OF_CONDUCT.md).
-
----
-
-## License
-
-Distributed under the [Apache 2.0 License](LICENSE).
-
----
-
-## Team
-
-Built with care for the Hack2Skill AI Hackathon.
-
-| Role | Contributor |
-|------|------------|
-| Lead Developer | [@sahithirithvika](https://github.com/sahithirithvika) |
+- [ ] **Google Gemini 2.5 Flash** — Replace `get_ai_recommendations()` with live AI coordination
+- [ ] **Real-time data** — WebSocket integration with live stadium sensors
+- [ ] **Multi-event support** — Manage multiple concurrent events
+- [ ] **Mobile PWA** — Progressive Web App for field staff
+- [ ] **Export to PDF/Excel** — Full report export
+- [ ] **Multi-language** — i18n support for international events
+- [ ] **Role-based access control** — Per-stakeholder authentication
 
 ---
 
-_Stadium Coordinator — because every second counts when 60 000 fans are in the stands._
+## 🤝 Contributing
+
+Please read [CONTRIBUTING.md](CONTRIBUTING.md) before submitting a PR.
+
+---
+
+## 🛡️ Security
+
+See [SECURITY.md](SECURITY.md) for our vulnerability reporting policy.
+
+---
+
+## 📄 License
+
+Licensed under the [Apache License 2.0](LICENSE).
+
+---
+
+## 👥 Team
+
+Built with ❤️ for Hack2Skill Build with AI Hackathon.
+
+</div>
